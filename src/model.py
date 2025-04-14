@@ -28,11 +28,11 @@ class XGBoostModel:
         self,
         task_name: str = "battery_capacity_prediction",
         objective: str = "reg:squarederror",
-        n_estimators: int = 100,
+        n_estimators: int = 200,
         learning_rate: float = 0.1,
-        max_depth: int = 5,
+        max_depth: int = 3,
         min_child_weight: int = 1,
-        subsample: float = 0.8,
+        subsample: float = 0.9,
         random_state: int = 42,
     ) -> None:
         """
@@ -483,7 +483,7 @@ class XGBoostModel:
 
         # 是否为XGBoost模型
         if isinstance(model, xgb.XGBRegressor):
-            self.best_model = model
+            self.model = model
             print(f"模型已从 '{model_path}' 加载")
 
         else:

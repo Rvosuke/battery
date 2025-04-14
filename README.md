@@ -130,6 +130,7 @@ battery/
 1.  **准备数据**: 将 `Dataset_1_NCA_battery.csv` 或其他文件放置在 `data/` 目录下。
 2.  **运行训练与评估**:
     `python main.py`  注意设置datapath
+    > 当进行迁移学习时，设置pretrain=True，我们将使用在NCAdataset中训练完毕的模型来初始化NCM_NCA_dataset模型。
 3.  **查看结果**:
     *   训练过程中的评估指标会打印到终端。
     *   生成的图表会显示出来，或者根据代码设置保存到 `results/` 目录。
